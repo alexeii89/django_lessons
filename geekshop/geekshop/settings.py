@@ -126,6 +126,11 @@ STATICFILES_DIRS = [
     'C:/Users/alex/Documents/GitHub/django_lessons/geekshop/static',
 ]
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = 'C:/Users/alex/Documents/GitHub/django_lessons/geekshop/media'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

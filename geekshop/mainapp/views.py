@@ -1,10 +1,12 @@
 from django.shortcuts import render
-
+from mainapp.models import Product
 # Create your views here.
+
 
 def index(request):
     context = {
-        'title': 'главная'
+        'title': 'главная',
+        'products': Product.objects.all()[:4]
     }
     return render(request, 'mainapp/index.html', context)
 
@@ -18,12 +20,12 @@ links_menu = [
 ]
 
 
-
 def contact(request):
     context = {
         'title': 'контакты'
     }
     return render(request, 'mainapp/contact.html', context)
+
 
 def products(request):
     context = {
@@ -32,12 +34,14 @@ def products(request):
     }
     return render(request, 'mainapp/products.html', context=context)
 
+
 def products_home(request):
     context = {
         'links_menu': links_menu,
         'title': 'продукты для дома'
     }
     return render(request, 'mainapp/products.html', context=context)
+
 
 def products_office(request):
     context = {
@@ -46,12 +50,14 @@ def products_office(request):
     }
     return render(request, 'mainapp/products.html', context=context)
 
+
 def products_modern(request):
     context = {
         'links_menu': links_menu,
         'title': 'продукты модерн'
     }
     return render(request, 'mainapp/products.html', context=context)
+
 
 def products_classic(request):
     context = {
