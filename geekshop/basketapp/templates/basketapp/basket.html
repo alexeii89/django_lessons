@@ -1,0 +1,67 @@
+
+{% extends 'mainapp/base.html' %}
+
+{% block menu %}
+		<div class="hero">
+			<div class="header clearfix">
+				<a href="/" class="logo"></a>
+
+					{% include 'mainapp/includes/inc_main_menu.html' %}
+
+				<a href="#" class="search"></a>
+                <a href="#" class="basket"></a>
+			</div>
+			<h1>Карзина</h1>
+		</div>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12" style="padding-right:30px; padding-left:0px">
+			<div class="panel panel-info">
+				<div class="panel-body">
+
+                {% for prod in basket %}
+					<div class="row">
+						<div class="col-xs-2"><img class="img-responsive" src="/media/{{ prod.product.image }}">
+						</div>
+						<div class="col-xs-4">
+							<h4 class="product-name"><strong>{{ prod.product.name }}</strong></h4><h4><small>{{ prod.product.short_desk }}</small></h4>
+						</div>
+						<div class="col-xs-6">
+							<div class="col-xs-6 text-right">
+								<h6><strong>{{ prod.product.price }} <span class="text-muted">x</span></strong></h6>
+							</div>
+							<div class="col-xs-4">
+								<input type="text" class="form-control input-sm" value="{{ prod.quantity }}">
+							</div>
+							<div class="col-xs-2">
+								<button type="button" class="btn btn-link btn-xs">
+									<span class="glyphicon glyphicon-trash"> </span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<hr>
+				{% endfor %}
+                    
+
+				</div>
+				<div class="panel-footer">
+					<div class="row text-center">
+						<div class="col-xs-11">
+							<h4 class="text-right">Всего <strong>${{ total_sum }}</strong></h4>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
