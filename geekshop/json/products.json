@@ -1,0 +1,72 @@
+[
+    {
+        "category": "дом",
+        "name": "дом 1",
+        "image": "products/product-1.jpg",
+        "price": 100,
+        "quantity": 100
+    },
+    {
+        "category": "дом",
+        "name": "дом 2",
+        "image": "products/product-2.jpg",
+        "price": 150,
+        "quantity": 85
+    },
+    {
+        "category": "дом",
+        "name": "дом 3",
+        "image": "products/product-3.jpg",
+        "price": 300,
+        "quantity": 20
+    },
+    {
+        "category": "офис",
+        "name": "офис 1",
+        "image": "products/product-4.jpg",
+        "price": 50,
+        "quantity": 299
+    },
+    {
+        "category": "офис",
+        "name": "офис 2",
+        "image": "products/product-11.jpg",
+        "price": 75,
+        "quantity": 215
+    },
+    {
+        "category": "офис",
+        "name": "офис 3",
+        "image": "products/product-21.jpg",
+        "price": 95,
+        "quantity": 175
+    },
+    {
+        "category": "классика",
+        "name": "классика 1",
+        "image": "products/product-31.jpg",
+        "price": 110,
+        "quantity": 20
+    },
+    {
+        "category": "классика",
+        "name": "классика 2",
+        "image": "products/product-41.jpg",
+        "price": 230,
+        "quantity": 15
+    },
+    {
+        "category": "модерн",
+        "name": "модерн 1",
+        "image": "products/product-51.jpg",
+        "price": 300,
+        "quantity": 30
+    },
+    {
+        "category": "модерн",
+        "name": "модерн 2",
+        "image": "products/product-61.jpg",
+        "price": 400,
+        "quantity": 17
+    }
+]

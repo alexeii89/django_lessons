@@ -1,0 +1,65 @@
+
+{% extends 'mainapp/base.html' %}
+
+{% block menu %}
+		<div class="hero-white">
+			<div class="header clearfix">
+				<a href="/" class="logo"></a>
+					{% include 'mainapp/includes/inc_main_menu.html' %}
+				<a href="#" class="search"></a>
+                <a href="#" class="basket"></a>
+			</div>
+		</div>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+		<div class="details">
+			<div class="links clearfix">
+				{% include 'mainapp/includes/inc_category_menu.html' %}
+			</div>
+
+			<div class="details-products">
+				<div class="details-slider">
+					<div class="slider-product">
+						<img src="/media/{{ first_same_products.image }}" alt="product image" style="width:570px; height: 570px;">
+					</div>
+
+				</div>
+
+				<div class="description">
+					<h3 class="big-bold">{{ first_same_products.name }}</h3>
+					<h3 class="red">горячее предложение</h3>
+					<p class="price"> {{ first_same_products.price }}<span> руб</span></p>
+					<a href="{% url 'basket:add' first_same_products.pk %}" class="red-button">
+						заказать <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</a>
+					<div class="description-text">
+						<p>{{ first_same_products.short_desk }}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="related">
+				<div class="title clearfix">
+					<h2>Похожие продукты</h2>
+					<a class="explore" href="#">показать все <img src="{% static 'img/arrow.png' %}" alt=""></a>
+				</div>
+				<div class="related-products clearfix">
+				{% for same_product in same_products %}
+					<div class="block">
+						<a href="{% url 'basket:add' same_product.pk %}"><img src="/media/{{ same_product.image }}" alt="" style="width:370px; height:370px;">
+							<div class="text">
+								<img src="{% static 'img/icon-hover.png' %}" alt="img">
+								<h4>{{ same_product.name }}</h4>
+								<p>same_product.short_desk</p>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+
+
+				</div>
+			</div>
+		</div>
+{% endblock %}
