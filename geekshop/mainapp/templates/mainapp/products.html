@@ -22,20 +22,30 @@
 			<div class="details-products">
 				<div class="details-slider">
 					<div class="slider-product">
-						<img src="/media/{{ first_same_products.image }}" alt="product image" style="width:570px; height: 570px;">
+					<img src="/media/{{ hot_product.image }}">
 					</div>
-
+					<div class="slider-control">
+						<div class="block">
+							<a href="#"><img src="/media/{{ hot_product.image }}" style="width:50px"alt="" ></a>
+						</div>
+						<div class="block">
+							<a href="#"><img src="/media/{{ hot_product.image }}" style="width:50px"alt=""></a>
+						</div>
+						<div class="block">
+							<a href="#"><img src="/media/{{ hot_product.image }}" style="width:50px"alt=""></a>
+						</div>
+					</div>
 				</div>
 
 				<div class="description">
-					<h3 class="big-bold">{{ first_same_products.name }}</h3>
+					<h3 class="big-bold">{{ hot_product.name }}</h3>
 					<h3 class="red">горячее предложение</h3>
-					<p class="price"> {{ first_same_products.price }}<span> руб</span></p>
-					<a href="{% url 'basket:add' first_same_products.pk %}" class="red-button">
-						заказать <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					<p class="price">{{ hot_product.price }} <span>руб</span></p>
+					<a href="{% url 'basket:add' hot_product.pk %}" class="red-button">
+					заказать <i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</a>
 					<div class="description-text">
-						<p>{{ first_same_products.short_desk }}</p>
+					{{ hot_product.description }} 
 					</div>
 				</div>
 			</div>
